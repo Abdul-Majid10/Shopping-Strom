@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 // import { useDispatch, useSelector } from "react-redux";
 // import { addproduct } from "../redux/apiCalls";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useState } from "react";
 import { userRequest } from "../requestMethods";
 
 const Container = styled.div`
@@ -87,6 +88,8 @@ const AddProduct = () => {
       color,
       price,
     });
+
+    console.log(res);
   };
 
   // useEffect(() => {

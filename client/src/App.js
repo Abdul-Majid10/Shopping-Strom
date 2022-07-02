@@ -5,6 +5,7 @@ import {
   Navigate,
   Routes,
 } from "react-router-dom";
+import AddProduct from "./pages/AddProduct";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -29,6 +30,10 @@ function App() {
         <Route
           path="/register"
           element={user ? <Navigate to="/" replace /> : <Register />}
+        ></Route>
+        <Route
+          path="/addproducts"
+          element={user?.isAdmin ? <AddProduct /> : <Navigate to="/" />}
         ></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/success" element={<Success />}></Route>

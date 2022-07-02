@@ -95,6 +95,12 @@ const Navbar = () => {
         </Center>
         <Right>
           <Link
+            to={"/products"}
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            <MenuItem>Add Product</MenuItem>
+          </Link>
+          <Link
             to={"/register"}
             style={{ color: "inherit", textDecoration: "none" }}
           >

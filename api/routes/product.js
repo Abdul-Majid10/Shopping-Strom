@@ -9,8 +9,27 @@ const router = require("express").Router();
 
 //CREATE
 
+// router.post("/", verifyTokenAndAdmin, async (req, res) => {
+//   const newProduct = new Product(req.body);
+
+//   try {
+//     const savedProduct = await newProduct.save();
+//     res.status(200).json(savedProduct);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 router.post("/", verifyTokenAndAdmin, async (req, res) => {
-  const newProduct = new Product(req.body);
+  const newProduct = new Product({
+    title: req.body.username,
+    desc: req.body.desc,
+    img: req.body.img,
+    categories: req.body.categories,
+    size: req.body.size,
+    color: req.body.color,
+    price: req.body.price,
+  });
 
   try {
     const savedProduct = await newProduct.save();
